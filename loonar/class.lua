@@ -1,4 +1,4 @@
--- 
+--
 -- Implementation of a class
 -- @func class : responsible of class and object creation
 -- returns
@@ -66,7 +66,7 @@ function class(class_object)
     class_object.initialize = constructor
   elseif type(class_object.initialize) == 'function' then
     constructor = class_object.initialize
-  else 
+  else
     class_object.initialize = constructor
   end
 

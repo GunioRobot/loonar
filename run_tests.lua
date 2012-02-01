@@ -7,7 +7,7 @@ require 'loonar.spec'
 require 'loonar.table'
 require 'loonar.string'
 
--- Load loonar 
+-- Load loonar
 require 'loonar.class'
 require 'loonar.object'
 require 'loonar.array'

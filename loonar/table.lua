@@ -1,5 +1,5 @@
 
--- Lua table extensions 
+-- Lua table extensions
 --      From :http://lua-users.org/lists/lua-l/2003-10/msg00259.html
 
 -- @func table.clone: Make a shallow copy of a table, including any
@@ -57,7 +57,7 @@ end
    Author: Julio Manuel Fernandez-Diaz
    Date:   January 12, 2007
    (For Lua 5.1)
-   
+
    Modified slightly by RiciLake to avoid the unnecessary table traversal in tablecount()
 
    Formats tables with cycles recursively to any depth.
@@ -74,7 +74,7 @@ end
    proper indentations, apart from printing them:
 
       print(table.show(t, "t"))   -- a typical use
-   
+
    Heavily based on "Saving tables with cycles", PIL2, p. 113.
 
    Arguments:
@@ -103,7 +103,7 @@ function table.show(t, name, indent)
       -- info.name is nil because o is not a calling level
       if info.what == "C" then
         return string.format("%q", so .. ", C function")
-      else 
+      else
         -- the information is defined through lines
         return string.format("%q", so .. ", defined in (" ..
           info.linedefined .. "-" .. info.lastlinedefined ..
@@ -119,14 +119,14 @@ function table.show(t, name, indent)
   local function addtocart (value, name, indent, saved, field)
     indent = indent or ""
     saved = saved or {}
-    field = field or name  
+    field = field or name
     cart = cart .. indent .. field
 
     if type(value) ~= "table" then
       cart = cart .. " = " .. basicSerialize(value) .. ";\n"
     else
       if saved[value] then
-        cart = cart .. " = {}; -- " .. saved[value] 
+        cart = cart .. " = {}; -- " .. saved[value]
                     .. " (self reference)\n"
         autoref = autoref ..  name .. " = " .. saved[value] .. ";\n"
       else
@@ -148,7 +148,7 @@ function table.show(t, name, indent)
       end
     end
   end
-  
+
   name = name or "__unnamed__"
   if type(t) ~= "table" then
     return name .. " = " .. basicSerialize(t)

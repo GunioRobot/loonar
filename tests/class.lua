@@ -50,7 +50,7 @@ person = class {
     self.name = name
     self.age = age
   end;
-  
+
   destory = function(self) end;
 }
 
